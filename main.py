@@ -1,6 +1,7 @@
 import fontawesome as fa
 import tkinter as tk
 import pyfirmata
+import time
 import tkinter.messagebox as tkmsbx
 
 white = 13
