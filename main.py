@@ -49,7 +49,13 @@ frame = tk.Frame(master=window, width=2, height=2, bg="white")
 frame.pack()
 
 def go_up():
+    board.digital[white].write(0)
+    board.digital[green].write(0)
+    board.digital[blue].write(0)
+    board.digital[red].write(0)
+
     board.digital[white].write(1)
+    board.digital[green].write(1)
 
 up = tk.Button(
     master=frame,
@@ -59,6 +65,11 @@ up = tk.Button(
 ).grid(row=1, column=1)
 
 def go_left():
+    board.digital[white].write(0)
+    board.digital[green].write(0)
+    board.digital[blue].write(0)
+    board.digital[red].write(0)
+
     board.digital[green].write(1)
 
 left = tk.Button(
@@ -69,7 +80,12 @@ left = tk.Button(
 ).grid(row=2, column=0)
 
 def go_right():
-    board.digital[blue].write(1)
+    board.digital[white].write(0)
+    board.digital[green].write(0)
+    board.digital[blue].write(0)
+    board.digital[red].write(0)
+
+    board.digital[white].write(1)
 
 right = tk.Button(
     master=frame,
@@ -79,6 +95,12 @@ right = tk.Button(
 ).grid(row=2, column=2)
 
 def go_down():
+    board.digital[white].write(0)
+    board.digital[green].write(0)
+    board.digital[blue].write(0)
+    board.digital[red].write(0)
+
+    board.digital[blue].write(1)
     board.digital[red].write(1)
 
 down = tk.Button(
