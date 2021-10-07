@@ -1,6 +1,14 @@
 import fontawesome as fa
 import tkinter as tk
+import pyfirmata
 import tkinter.messagebox as tkmsbx
+
+white = 13
+green = 12
+blue = 11
+red = 10
+
+board = pyfirmata.Arduino('/dev/ttyACM0')
 
 window = tk.Tk()
 
@@ -40,7 +48,7 @@ frame = tk.Frame(master=window, width=2, height=2, bg="white")
 frame.pack()
 
 def go_up():
-   tkmsbx.showinfo("Up", "Go up")
+    board.digital[white].write(1)
 
 up = tk.Button(
     master=frame,
@@ -50,7 +58,7 @@ up = tk.Button(
 ).grid(row=1, column=1)
 
 def go_left():
-   tkmsbx.showinfo("Left", "Go left")
+    board.digital[green].write(1)
 
 left = tk.Button(
     master=frame,
@@ -60,7 +68,7 @@ left = tk.Button(
 ).grid(row=2, column=0)
 
 def go_right():
-   tkmsbx.showinfo("Right", "Go right")
+    board.digital[blue].write(1)
 
 right = tk.Button(
     master=frame,
@@ -70,7 +78,7 @@ right = tk.Button(
 ).grid(row=2, column=2)
 
 def go_down():
-   tkmsbx.showinfo("Down", "Go down")
+    board.digital[red].write(1)
 
 down = tk.Button(
     master=frame,
